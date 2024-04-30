@@ -32,7 +32,7 @@ RUN npm run build
 
 
 # production
-FROM node:alpine AS production
+FROM node:14-alpine AS production
 WORKDIR /frontapp
 COPY --from=build /frontapp .
 CMD ["npm", "run", "serve"]
