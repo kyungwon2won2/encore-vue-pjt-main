@@ -14,10 +14,14 @@ jobs:
         - name: Source Checkout
           uses: actions/checkout@v2
 # 4. setup node(백엔드과 다른부분)
-        - name: Setup Docker Buildx
-          uses: docker/setup-buildx-action@v1
-# 5. docker build
+        - name: Setup Node.js
+          uses: actions/setup-node@v2
+          with:
+            node-version: 20.x
 
+# 5. docker build
+        - name: Setup Docker Buildx
+          uses: docker/setup-buildx-action@v2
 # 6. docker login
 
 # 7. docker build and push
